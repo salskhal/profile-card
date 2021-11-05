@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+/* css reset */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+li,
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* css variables */
+
+:root {
+    /* dark */
+    --text-dark: hsl(0, 0%, 100%);
+    --mini-text-dark: hsl(228, 34%, 66%);
+    --bg-dark: hsl(230, 17%, 14%);
+    --card-bg-dark: hsl(228, 28%, 20%);
+    --theme-dark: hsl(227, 47%, 96%);
+
+    /* light */
+    --text-light: hsl(230, 17%, 14%);
+    --mini-text-light: hsl(228, 12%, 44%);
+    --bg-light: hsl(0, 0%, 100%);
+    --card-bg-light: hsl(227, 47%, 96%);
+    --theme-light: hsl(228, 28%, 20%);
+
+
+    --grad: linear-gradient(to right, hsl(37, 97%, 70%), hsl(329, 70%, 58%));
+    --lime: hsl(163, 72%, 41%);
+    --font: "Inter", sans-serif;
+}
+
+
+@media(prefers-color-scheme: light) {
+    :root {
+        --text: var(--text-light);
+        --mini-text: var(--mini-text-light);
+        --bg: var(--bg-light);
+        --card-bg: var(--card-bg-light);
+        --theme: var(--theme-light);
+    }
+}
+
+@media(prefers-color-scheme: dark) {
+    :root {
+        --text: var(--text-dark);
+        --mini-text: var(--mini-text-dark);
+        --bg: var(--bg-dark);
+        --card-bg: var(--card-bg-dark);
+        --theme: var(--theme-dark);
+    }
+}
+
+[color-scheme="light"] {
+    --text: var(--text-light);
+    --mini-text: var(--mini-text-light);
+    --bg: var(--bg-light);
+    --card-bg: var(--card-bg-light);
+    --theme: var(--theme-light);
+}
+
+[color-scheme="dark"]{
+    --text: var(--text-dark);
+    --mini-text: var(--mini-text-dark);
+    --bg: var(--bg-dark);
+    --card-bg: var(--card-bg-dark);
+    --theme: var(--theme-dark);
+}
+
+/* utility classes */
+
+.w-400 {
+    font-weight: 400;
+}
+
+.w-700 {
+    font-weight: 700;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg);
+    font-family: var(--font);
+}
+
+.container {
+    width: 400px;
+    background: var(--card-bg);
+    text-align: center;
+    font-size: 15px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.grad {
+    width: 100%;
+    height: 5px;
+    background: var(--grad);
+}
+
+.theme {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: var(--theme);
+    margin: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.user h2 {
+    color: var(--text);
+}
+
+.user p {
+    color: var(--mini-text);
+}
+
+
+.user img {
+    width: 100px;
+    border-radius: 50%;
+    border: 2px solid yellow;
+}
+
+.description {
+    width: 80%;
+    margin-inline: auto;
+    font-size: .8rem;
+    color: var(--text);
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.mail {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 10px;
+    background: var(--bg);
+}
+
+.mail a {
+    color: var(--text);
+}
+
+
+.social-icon {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 60%;
+    margin-inline: auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+.social-icon img {
+    cursor: pointer;
+}
+
+.social-icon img:is(:hover, :focus) {
+    opacity: .5;
+}
+
+
+@media screen and (max-width: 550px) {
+    .container{
+        width: 300px;
+    }
+}
